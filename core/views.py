@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+### CUARTO
+def index(request):
+	return render(request, 'core/index.html') # ULTIMO ESTO
+
 #### PRIMERO
 def saludar(request):
     return HttpResponse("Hola desde Django")
