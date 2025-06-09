@@ -14,3 +14,4 @@ def saludar_con_parametros(request, nombre: str, apellido: str): # 3° ESTO
 	nombre = nombre.capitalize()
 	apellido = apellido.upper()
 	return HttpResponse(f'{apellido}, {nombre}')
+
