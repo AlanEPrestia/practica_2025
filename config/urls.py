@@ -15,10 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 
 from core import views
-
 
 
 urlpatterns = [
@@ -28,5 +27,6 @@ urlpatterns = [
     path('saludar2/', views.saludar_con_etiqueta), # 2° Y MOSTRAR (recordar agregar la url despues)
     path('saludar3/<str:nombre>/<str:apellido>', views.saludar_con_parametros), # 3° (recordar agregar la url despues y al mostrar ingresar los parametros ---> http://127.0.0.1:8000/saludar3/alan/ejemplo)´
     path('probandoTemplate/', views.probando_template),
+    path('app/', include('AppCoder.urls')),
 
 ]
