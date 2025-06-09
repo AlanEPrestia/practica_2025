@@ -24,8 +24,8 @@ def saludar_con_parametros(request, nombre: str, apellido: str): # 3° ESTO
 
 def probando_template(request):
     contexto = {
-        "nombre": "Nicolas",
-        "apellido": "Catalano",
+        "nombre": "Alan",
+        "apellido": "Prestia",
         "dia": datetime.now().date(),
         "notas": [10, 2, 4, 7, 3], #### SE MUESTRA EN EL SEGUNDO EJEMPLO
         "notas_malas": [6, 4, 2], #### SE MUESTRA EN EL SEGUNDO EJEMPLO 
