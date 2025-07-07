@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Estudiante, Profesor, Curso, Entregable
-from .forms import CursoFormulario, ProfesorFormulario
+from ..models import Estudiante, Profesor, Curso, Entregable
+from ..forms import CursoFormulario, ProfesorFormulario
 
 # def lista_estudiantes(request):
 #     estudiantes = Estudiante.objects.all()
@@ -61,6 +61,21 @@ def profesorFormulario(request):
         miFormulario = ProfesorFormulario()  # Formulario vacío para construir el html
 
     return render(request, "AppCoder/formulario/profesorFormulario.html", {"miFormulario": miFormulario})
+
+"""
+[Usuario entra por primera vez]
+→ request.method == GET
+→ muestra el formulario vacío
+
+[Usuario llena el formulario y lo envía]
+→ request.method == POST
+→ se valida el formulario
+→ si es válido:
+   → se crea y guarda el profesor
+   → se muestra la lista de profesores actualizada
+→ si NO es válido:
+   → se vuelve a mostrar el formulario con errores
+"""
 
 def busquedaCamada(request):
     return render(request, "AppCoder/formulario/busquedaCamada.html")
