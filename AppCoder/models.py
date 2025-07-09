@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 """
 Estas clases (Curso, Estudiante, Profesor, Entregable) en el archivo models.py de Django definen modelos de datos. Es decir, representan tablas en la base de datos, y cada clase es una tabla con sus campos (columnas).
@@ -44,3 +45,11 @@ class Entregable(models.Model):
 
     def __str__(self):
         return f"Nombre: {self.nombre}"
+
+class Avatar(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    imagen = models.ImageField(upload_to='avatares', null=True, blank = True)
+ 
+    def __str__(self):
+        return f"{self.user} - {self.imagen}"

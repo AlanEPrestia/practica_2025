@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from ..models import Estudiante, Profesor, Curso, Entregable
+from ..models import Avatar,Estudiante, Profesor, Curso, Entregable
 from ..forms import CursoFormulario, ProfesorFormulario
 
 # def lista_estudiantes(request):
@@ -13,7 +13,8 @@ from ..forms import CursoFormulario, ProfesorFormulario
 
 
 def inicio(request):
-    return render(request, "AppCoder/index.html")
+    avatar = Avatar.objects.filter(user=request.user.id).first()
+    return render(request, "AppCoder/index.html", {"avatar": avatar if avatar else None})
 
 def cursos(request):
     return render(request, "AppCoder/cursos.html")

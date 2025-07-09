@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import Estudiante, Profesor, Curso, Entregable
+from .models import Estudiante, Profesor, Curso, Entregable, Avatar
 
 # RESISTRAMOS CADA UNO DE NUESTROS MODELOS
 
@@ -9,6 +9,8 @@ admin.site.register(Estudiante)
 admin.site.register(Profesor)
 admin.site.register(Curso)
 admin.site.register(Entregable)
+
+admin.site.register(Avatar)
 
 class UserAdmin(BaseUserAdmin): 
     # Define las columnas que se mostrarán en la lista de usuarios en el panel de administración de Django. 
