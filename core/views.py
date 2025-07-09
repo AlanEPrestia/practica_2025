@@ -2,33 +2,33 @@ from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
 
-### CUARTO
-def index(request):
-	return render(request, 'core/index.html') # ULTIMO ESTO
 
-#### PRIMERO
+def index(request):
+	return render(request, 'core/index.html') 
+
+
 def saludar(request):
     return HttpResponse("Hola desde Django")
 
-### SEGUNDO
-def saludar_con_etiqueta(request):
-	return HttpResponse('<h1 style="color:red"> Hola </h1>') # 2° ESTO
 
-### TERCERO
-def saludar_con_parametros(request, nombre: str, apellido: str): # 3° ESTO
+def saludar_con_etiqueta(request):
+	return HttpResponse('<h1 style="color:red"> Hola </h1>') 
+
+
+def saludar_con_parametros(request, nombre: str, apellido: str): 
 	nombre = nombre.capitalize()
 	apellido = apellido.upper()
 	return HttpResponse(f'{apellido}, {nombre}')
 
-### QUINTO
+
 
 def probando_template(request):
     contexto = {
         "nombre": "Alan",
         "apellido": "Prestia",
         "dia": datetime.now().date(),
-        "notas": [10, 2, 4, 7, 3], #### SE MUESTRA EN EL SEGUNDO EJEMPLO
-        "notas_malas": [6, 4, 2], #### SE MUESTRA EN EL SEGUNDO EJEMPLO 
+        "notas": [10, 2, 4, 7, 3], 
+        "notas_malas": [6, 4, 2], 
     }
     return render(request, "core/template1.html", contexto)
 """

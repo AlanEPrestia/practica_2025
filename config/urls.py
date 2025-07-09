@@ -25,10 +25,10 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index), ### CUARTO (en primer lugar estaba como path('index/', views.index))
-    path('saludar', views.saludar), ### PRIMERO (recordar agregar la url despues)
-    path('saludar2/', views.saludar_con_etiqueta), # 2° Y MOSTRAR (recordar agregar la url despues)
-    path('saludar3/<str:nombre>/<str:apellido>', views.saludar_con_parametros), # 3° (recordar agregar la url despues y al mostrar ingresar los parametros ---> http://127.0.0.1:8000/saludar3/alan/ejemplo)´
+    path('', views.index), 
+    path('saludar', views.saludar), 
+    path('saludar2/', views.saludar_con_etiqueta), 
+    path('saludar3/<str:nombre>/<str:apellido>', views.saludar_con_parametros), 
     path('probandoTemplate/', views.probando_template),
     path('app/', include('AppCoder.urls')),
 
